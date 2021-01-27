@@ -80,7 +80,7 @@ function processBonus(emp) {
     bonusPct -= 1;
   }
 
-  // bonusPct = checkBonusLimits(bonusPct);
+  bonusPct = checkBonusLimits(bonusPct);
 
   return bonusPct;
 }
@@ -100,11 +100,11 @@ function salaryAdjustment(salary) {
   return false;
 }
 
-// function checkBonusLimits(bonusPercent) {
-//   if (bonusPercent > 13) {
-//     bonusPercent = 13;
-//   } else if (bonusPercent < 0) {
-//     bonusPercent = 0;
-//   }
-//   return bonusPercent;
-// }
+function checkBonusLimits(bonusPercent) {
+  if (bonusPercent > 13) {
+    bonusPercent = 13;
+  } else if (bonusPercent < 0) {
+    bonusPercent = 0;
+  }
+  return bonusPercent;
+}
