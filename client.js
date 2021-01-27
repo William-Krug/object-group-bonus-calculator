@@ -62,14 +62,26 @@ function processBonus(emp) {
     case 2:
       break;
     case 3:
-      bonusPct = 0.04;
+      bonusPct = 4;
       break;
     case 4:
-      bonusPct = 0.06;
+      bonusPct = 6;
       break;
     case 5:
-      bonusPct = 0.1;
+      bonusPct = 10;
       break;
   }
+
+  if (seniorityBump(emp.employeeNumber)) {
+    bonusPct += 5;
+  }
+
   return bonusPct;
+}
+
+function seniorityBump(employeeID) {
+  if (employeeID.length === 4) {
+    return true;
+  }
+  return false;
 }
