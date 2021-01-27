@@ -51,6 +51,11 @@ function processEmployeeBonus(individual) {
   const individualBonus = {};
   individualBonus.name = individual.name;
   individualBonus.bonusPercentage = processBonus(individual);
+  individualBonus.totalBonus = calculateBonusDollar(
+    individual.annualSalary,
+    individualBonus.bonusPercentage
+  );
+  individualBonus.totalCompensation = 
   return individualBonus;
 }
 
@@ -107,4 +112,10 @@ function checkBonusLimits(bonusPercent) {
     bonusPercent = 0;
   }
   return bonusPercent;
+}
+
+function calculateBonusDollar(annSal, pct) {
+  const annSalNumber = Number(annSal);
+  const pctDecimal = pct / 100;
+  return Math.round(annSalNumber * pctDecimal);
 }
