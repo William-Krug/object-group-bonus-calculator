@@ -42,10 +42,15 @@ const employees = [
 
 console.log(employees);
 
+const employeeBonusBreakdown = [];
+
 for (let employee of employees) {
   const employeeBonus = processEmployeeBonus(employee);
   console.log(employeeBonus);
+  employeeBonusBreakdown.push(employeeBonus);
 }
+
+console.log(employeeBonusBreakdown);
 
 function processEmployeeBonus(individual) {
   const individualBonus = {};
