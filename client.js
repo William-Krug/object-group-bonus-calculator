@@ -56,5 +56,20 @@ function processEmployeeBonus(individual) {
 
 function processBonus(emp) {
   let bonusPct = 0;
+
+  switch (emp.reviewRating) {
+    case 1:
+    case 2:
+      break;
+    case 3:
+      bonusPct = 0.04;
+      break;
+    case 4:
+      bonusPct = 0.06;
+      break;
+    case 5:
+      bonusPct = 0.1;
+      break;
+  }
   return bonusPct;
 }
