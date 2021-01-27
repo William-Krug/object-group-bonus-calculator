@@ -76,6 +76,12 @@ function processBonus(emp) {
     bonusPct += 5;
   }
 
+  if (salaryAdjustment(emp.annualSalary)) {
+    bonusPct -= 1;
+  }
+
+  // bonusPct = checkBonusLimits(bonusPct);
+
   return bonusPct;
 }
 
@@ -85,3 +91,20 @@ function seniorityBump(employeeID) {
   }
   return false;
 }
+
+function salaryAdjustment(salary) {
+  const salaryNumber = Number(salary);
+  if (salaryNumber > 65000) {
+    return true;
+  }
+  return false;
+}
+
+// function checkBonusLimits(bonusPercent) {
+//   if (bonusPercent > 13) {
+//     bonusPercent = 13;
+//   } else if (bonusPercent < 0) {
+//     bonusPercent = 0;
+//   }
+//   return bonusPercent;
+// }
