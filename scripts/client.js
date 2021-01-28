@@ -136,17 +136,27 @@ function calculateTotalComp(sal, bns) {
 
 function readyNow() {
   displayPayRollData();
+  displayBonusPayData();
 }
 
 function displayPayRollData() {
   let $employeeMetadata = $('#baseEmployeeMetrics');
   $employeeMetadata.empty();
   for (let ind of employees) {
-    $employeeMetadata.append(`<li>         Name: ${ind.name}</li>`);
-    $employeeMetadata.append(`<li>   Employee #: ${ind.employeeNumber}</li>`);
-    $employeeMetadata.append(`<li>Annual Salary: ${ind.annualSalary}</li>`);
-    $employeeMetadata.append(`<li>Review Rating: ${ind.reviewRating}</li>`);
+    $employeeMetadata.append(`<li>Name: ${ind.name}<br>
+    employee #: ${ind.employeeNumber}<br>
+    Annual Salary: ${ind.annualSalary}<br>
+    Review Rating: ${ind.reviewRating}</li>`);
   }
 }
 
-displayPayRollData();
+function displayBonusPayData() {
+  let $employeeBonusMetadata = $('#bonusEmployeeMetrics');
+  $employeeBonusMetadata.empty();
+  for (let ind of employeeBonusBreakdown) {
+    $employeeBonusMetadata.append(`<li>Name: ${ind.name}<br>
+    Bonus Percentage: ${ind.bonusPercentage}<br>
+    Total Bonus: ${ind.totalBonus}<br>
+    Total Compensation: ${ind.totalCompensation}</li>`);
+  }
+}
