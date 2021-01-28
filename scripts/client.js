@@ -39,6 +39,7 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
+$(document).ready(readyNow);
 
 console.log(employees);
 
@@ -132,3 +133,20 @@ function calculateTotalComp(sal, bns) {
   const salNumber = Number(sal);
   return salNumber + bns;
 }
+
+function readyNow() {
+  displayPayRollData();
+}
+
+function displayPayRollData() {
+  let $employeeMetadata = $('#baseEmployeeMetrics');
+  $employeeMetadata.empty();
+  for (let ind of employees) {
+    $employeeMetadata.append(`<li>         Name: ${ind.name}</li>`);
+    $employeeMetadata.append(`<li>   Employee #: ${ind.employeeNumber}</li>`);
+    $employeeMetadata.append(`<li>Annual Salary: ${ind.annualSalary}</li>`);
+    $employeeMetadata.append(`<li>Review Rating: ${ind.reviewRating}</li>`);
+  }
+}
+
+displayPayRollData();
