@@ -135,8 +135,7 @@ function calculateTotalComp(sal, bns) {
 }
 
 function readyNow() {
-  displayPayRollData();
-  displayBonusPayData();
+  $('#displayPayrollButton').on('click', displayPayroll);
 }
 
 function displayPayRollData() {
@@ -159,4 +158,9 @@ function displayBonusPayData() {
     Total Bonus: ${ind.totalBonus}<br>
     Total Compensation: ${ind.totalCompensation}</li>`);
   }
+}
+
+function displayPayroll() {
+  displayPayRollData();
+  displayBonusPayData();
 }
