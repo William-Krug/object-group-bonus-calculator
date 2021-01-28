@@ -1,3 +1,12 @@
+#displayPayroll {
+  margin: 20px;
+  background-color: #4169e1;
+  color: #ffffff;
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+}
+
 .payrollData {
   margin: 20px;
 }
